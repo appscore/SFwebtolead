@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <title>Trideca AI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Google Font: Space Grotesk -->
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
@@ -70,6 +68,7 @@
       border-radius: 10px;
       font-size: 1rem;
       transition: border-color 0.3s, box-shadow 0.3s;
+      height: 50px;
     }
 
     input:focus,
@@ -80,25 +79,22 @@
       outline: none;
     }
 
-    select[multiple] {
-      height: 140px;
-      scrollbar-width: thin;
-      scrollbar-color: #5B40FF #1a1a1a;
+    .checkbox-group {
+      margin-bottom: 30px;
     }
 
-    select[multiple]::-webkit-scrollbar {
-      width: 8px;
+    .checkbox-group label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 400;
+      font-size: 0.95rem;
+      color: #ddd;
     }
 
-    select[multiple]::-webkit-scrollbar-track {
-      background: #1a1a1a;
-      border-radius: 8px;
-    }
-
-    select[multiple]::-webkit-scrollbar-thumb {
-      background-color: #5B40FF;
-      border-radius: 8px;
-      border: 2px solid #1a1a1a;
+    .checkbox-group input[type="checkbox"] {
+      margin-right: 10px;
+      accent-color: #5B40FF;
+      transform: scale(1.2);
     }
 
     input[type="submit"] {
@@ -143,7 +139,6 @@
   <h1>Trideca AI</h1>
 
   <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D5g000002GoYr" method="POST">
-
     <input type="hidden" name="oid" value="00D5g000002GoYr">
     <input type="hidden" name="retURL" value="https://www.trideca.com.au/insights">
 
@@ -165,25 +160,23 @@
       <option value="Canberra AI">Canberra AI</option>
     </select>
 
-    <label for="00NOb000004WXub">AI Interest</label>
-    <div class="hint">Tap and hold to select multiple options</div>
-    <select id="00NOb000004WXub" multiple name="00NOb000004WXub" title="AI Interest">
-      <option value="Sovereign AI">Sovereign AI</option>
-      <option value="Multi Model AI">Multi Model AI</option>
-      <option value="Defence AI">Defence AI</option>
-      <option value="Trustworthy AI">Trustworthy AI</option>
-      <option value="Explainable AI">Explainable AI</option>
-      <option value="AI People">AI People</option>
-      <option value="AI Advisory">AI Advisory</option>
-      <option value="Just looking to talk">Just looking to talk</option>
-      <option value="Just interested in the datasheet">Just interested in the datasheet</option>
-    </select>
+    <label>AI Interest</label>
+    <div class="hint">Please select one or more interests from the options below.</div>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="00NOb000004WXub" value="Sovereign AI"> Sovereign AI</label>
+      <label><input type="checkbox" name="00NOb000004WXub" value="Multi Model AI"> Multi Model AI</label>
+      <label><input type="checkbox" name="00NOb000004WXub" value="Defence AI"> Defence AI</label>
+      <label><input type="checkbox" name="00NOb000004WXub" value="Trustworthy AI"> Trustworthy AI</label>
+      <label><input type="checkbox" name="00NOb000004WXub" value="Explainable AI"> Explainable AI</label>
+      <label><input type="checkbox" name="00NOb000004WXub" value="AI People"> AI People</label>
+      <label><input type="checkbox" name="00NOb000004WXub" value="AI Advisory"> AI Advisory</label>
+      <label><input type="checkbox" name="00NOb000004WXub" value="Just looking to talk"> Just looking to talk</label>
+      <label><input type="checkbox" name="00NOb000004WXub" value="Just interested in the datasheet"> Just interested in the datasheet</label>
+    </div>
 
     <input type="submit" name="submit" value="Submit">
 
-    <!-- Logo is block element on mobile, fixed on large screen -->
     <img src="Group%205395.png" alt="Trideca Logo" class="logo">
-
   </form>
 
 </body>
