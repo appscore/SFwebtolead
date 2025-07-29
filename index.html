@@ -5,7 +5,6 @@
   <title>Trideca</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
-
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -17,44 +16,54 @@
       font-family: 'Space Grotesk', sans-serif;
       padding: 20px;
       margin: 0;
-      position: relative;
-      min-height: 100vh;
     }
 
     .header-wrapper {
+      max-width: 600px;
+      margin: 0 auto 20px auto;
       text-align: center;
-      margin-bottom: 30px;
     }
 
-    .header-wrapper h1 {
-      font-size: 2.2rem;
-      color: #5B40FF;
-      letter-spacing: 1.2px;
-      margin: 0;
+    .header-wrapper img.logo {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 0 auto;
     }
 
     .header-wrapper .subheading {
-      margin-top: 10px;
-      font-size: 1rem;
-      color: #bbb;
+      margin-top: 12px;
+      font-size: 1.05rem;
       font-weight: 400;
+      color: #bbb;
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .header-wrapper img.stamp {
+      width: 100%;
+      max-width: 160px;
+      height: auto;
+      margin: 18px auto;
+      display: block;
     }
 
     form {
       max-width: 600px;
       margin: 0 auto;
       background-color: #111;
-      padding: 25px;
-      border-radius: 18px;
+      padding: 20px;
+      border-radius: 14px;
       box-shadow: 0 0 20px rgba(91, 64, 255, 0.3);
-      position: relative;
     }
 
     label {
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: #ccc;
     }
 
@@ -67,57 +76,69 @@
 
     input[type="text"],
     input[type="email"],
-    select,
-    textarea {
+    select {
       width: 100%;
-      padding: 12px;
-      margin-bottom: 28px;
+      padding: 10px 12px;
+      margin-bottom: 20px;
       background-color: #1a1a1a;
       color: #fff;
       border: 1px solid #333;
-      border-radius: 10px;
-      font-size: 1rem;
-      transition: border-color 0.3s, box-shadow 0.3s;
-      height: 50px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      height: 46px;
     }
 
     input:focus,
-    select:focus,
-    textarea:focus {
+    select:focus {
       border-color: #5B40FF;
       box-shadow: 0 0 8px rgba(91, 64, 255, 0.5);
       outline: none;
     }
 
     .checkbox-group {
-      margin-bottom: 30px;
-    }
-
-    .checkbox-group label {
-      display: block;
-      margin-bottom: 10px;
-      font-weight: 400;
-      font-size: 0.95rem;
-      color: #ddd;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
     }
 
     .checkbox-group input[type="checkbox"] {
-      margin-right: 10px;
-      accent-color: #5B40FF;
-      transform: scale(1.2);
+      display: none;
+    }
+
+    .checkbox-box {
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: #ddd;
+      flex: 1 1 calc(33.33% - 10px);
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .checkbox-box:hover {
+      border-color: #5B40FF;
+    }
+
+    .checkbox-group input[type="checkbox"]:checked + .checkbox-box {
+      background-color: #5B40FF;
+      color: white;
+      border-color: #5B40FF;
     }
 
     input[type="submit"] {
       background-color: #5B40FF;
       color: #fff;
-      padding: 14px 20px;
+      padding: 12px 16px;
       font-size: 1rem;
       border: none;
-      border-radius: 12px;
+      border-radius: 10px;
       cursor: pointer;
       width: 100%;
       font-weight: bold;
-      transition: background-color 0.3s, transform 0.2s;
     }
 
     input[type="submit"]:hover {
@@ -125,38 +146,23 @@
       transform: scale(1.02);
     }
 
-    .logo {
-      display: block;
-      margin: 30px auto 0 auto;
-      width: 160px;
-      opacity: 0.85;
-      filter: drop-shadow(0 0 6px rgba(91, 64, 255, 0.3));
-    }
-
-    @media (min-width: 901px) {
-      .logo {
-        position: fixed;
-        bottom: 10px;
-        right: 10px;
-        margin: 0;
+    @media (max-width: 480px) {
+      .checkbox-box {
+        flex: 1 1 calc(50% - 10px);
       }
-    }
 
-    @media (max-width: 900px) {
-      .logo {
-        position: static;
-        margin: 30px auto 0 auto;
-        display: block;
+      .header-wrapper .subheading {
+        font-size: 1rem;
       }
     }
   </style>
 </head>
-
 <body>
 
   <div class="header-wrapper">
-    <h1>Trideca</h1>
-    <div class="subheading">Let's spark your business advantage.</div>
+    <img src="trideca-logo.png" alt="Trideca Logo" class="logo">
+    <div class="subheading">Build a Smarter Future with AI – and a Lego Set</div>
+    <img src="trideca-stamp.png" alt="Trideca Stamp" class="stamp">
   </div>
 
   <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D5g000002GoYr" method="POST">
@@ -172,33 +178,33 @@
     <label for="email">Email</label>
     <input id="email" maxlength="80" name="email" type="email" required>
 
-    <label for="company">Company</label>
+    <label for="company">Organisation/Department</label>
     <input id="company" maxlength="40" name="company" type="text">
 
+    <label for="title">Job Title</label>
+    <input id="title" maxlength="40" name="title" type="text">
+
     <label for="00NOb000004WbBp">Event</label>
-    <select id="00NOb000004WbBp" name="00NOb000004WbBp" title="Event" required>
-      <option value="">-- Select Event --</option>
-      <option value="Canberra AI">Canberra AI</option>
+    <select id="00NOb000004WbBp" name="00NOb000004WbBp" disabled>
+      <option value="Canberra AI" selected>Canberra AI</option>
     </select>
+    <input type="hidden" name="00NOb000004WbBp" value="Canberra AI">
 
     <label>AI Interest</label>
-    <div class="hint">Please select one or more interests from the options below.</div>
+    <div class="hint">Please select one or more interests below.</div>
     <div class="checkbox-group">
-      <label><input type="checkbox" name="00NOb000004WXub" value="Sovereign AI"> Sovereign AI</label>
-      <label><input type="checkbox" name="00NOb000004WXub" value="Multi Model AI"> Multi Model AI</label>
-      <label><input type="checkbox" name="00NOb000004WXub" value="Defence AI"> Defence AI</label>
-      <label><input type="checkbox" name="00NOb000004WXub" value="Trustworthy AI"> Trustworthy AI</label>
-      <label><input type="checkbox" name="00NOb000004WXub" value="Explainable AI"> Explainable AI</label>
-      <label><input type="checkbox" name="00NOb000004WXub" value="AI People"> AI People</label>
-      <label><input type="checkbox" name="00NOb000004WXub" value="AI Advisory"> AI Advisory</label>
-      <label><input type="checkbox" name="00NOb000004WXub" value="Just looking to talk"> Just looking to talk</label>
-      <label><input type="checkbox" name="00NOb000004WXub" value="Just interested in the datasheet"> Just interested in the datasheet</label>
+      <label><input type="checkbox" name="00NOb000004WXub" value="Sovereign AI"><div class="checkbox-box">Sovereign AI</div></label>
+      <label><input type="checkbox" name="00NOb000004WXub" value="Multimodal AI"><div class="checkbox-box">Multimodal AI</div></label>
+      <label><input type="checkbox" name="00NOb000004WXub" value="Defence &amp; Security AI"><div class="checkbox-box">Defence & Security AI</div></label>
+      <label><input type="checkbox" name="00NOb000004WXub" value="Trusted &amp; Ethical AI"><div class="checkbox-box">Trusted & Ethical AI</div></label>
+      <label><input type="checkbox" name="00NOb000004WXub" value="Explainable AI"><div class="checkbox-box">Explainable AI</div></label>
+      <label><input type="checkbox" name="00NOb000004WXub" value="AI Talent &amp; Workforce"><div class="checkbox-box">AI Talent & Workforce</div></label>
+      <label><input type="checkbox" name="00NOb000004WXub" value="AI Strategy &amp; Advisory"><div class="checkbox-box">AI Strategy & Advisory</div></label>
+      <label><input type="checkbox" name="00NOb000004WXub" value="Exploring Ideas / open to chat"><div class="checkbox-box">Exploring Ideas / open to chat</div></label>
+      <label><input type="checkbox" name="00NOb000004WXub" value="Interested in product info"><div class="checkbox-box">Interested in product info</div></label>
     </div>
 
     <input type="submit" name="submit" value="Submit">
-
-    <!-- Logo below submit on mobile, fixed on desktop -->
-    <img src="Group%205395.png" alt="Trideca Logo" class="logo">
   </form>
 
 </body>
